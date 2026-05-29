@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>My World</title>
+    <style>
+      body {
+        background-color: #1a1a2e;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding-top: 80px;
+      }
+      h1 {
+        font-size: 48px;
+        color: #e94560;
+      }
+      p {
+        font-size: 18px;
+        color: #a8a8b3;
+      }
+      .start-btn {
+        background-color: #e94560;
+        color: white;
+        border: none;
+        padding: 16px 40px;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 32px;
+      }
+      .start-btn:hover {
+        background-color: #c73652;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>My 3D World</h1>
+    <p>The beginning of something great.</p>
+    <button class="start-btn">Start Engine</button>
+
+    <script>
+      const button = document.querySelector('.start-btn');
+
+      button.addEventListener('click', function() {
+       // Create a countdown from 3 to 0
+let count = 3;
+
+// setInterval runs a function repeatedly, every 1000 milliseconds (1 second)
+const timer = setInterval(function() {
+  button.textContent = 'Starting in ' + count + '...';
+  count = count - 1; // count down by 1
+
+  if (count < 0) {
+    clearInterval(timer);              // stop the repeating timer
+    button.textContent = 'DRIVE! 🚗';
+    button.style.backgroundColor = '#27ae60';
+  }
+}, 1000); // 1000ms = 1 second
+      });
+    </script>
+
+  </body>
+</html>
