@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "dev": "cd my-car-world && npm run dev"
+  },
+  "dependencies": {
+    "cannon-es": "^0.20.0"
+  }
+}

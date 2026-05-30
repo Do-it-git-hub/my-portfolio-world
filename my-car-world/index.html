@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>My Car World</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sai Jeldi - 3D Portfolio</title>
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
-    <canvas id="webgl-canvas"></canvas>
+    <!-- LOADING SCREEN -->
+    <div id="loading-screen" class="overlay">
+      <div class="loader-content">
+        <h2>Loading World...</h2>
+        <div class="loading-bar">
+          <div id="loading-bar-fill"></div>
+        </div>
+        <div id="loading-text">0%</div>
+      </div>
+    </div>
 
-    <!-- Vite loads main.js as a MODULE — this enables import/export between files -->
-    <script type="module" src="main.js"></script>
+    <!-- HUD (Heads Up Display) -->
+    <div id="hud" class="hud-container">
+      <div class="hud-speedometer">
+        <span id="hud-speed">0</span>
+        <small>KM/H</small>
+      </div>
+      <div id="hud-zone" class="hud-zone-indicator"></div>
+    </div>
+    
+    <div id="controls-hint" class="controls-hint">
+      Use <span>W</span> <span>A</span> <span>S</span> <span>D</span> or <span>ARROWS</span> to drive
+    </div>
+
+    <!-- ZONE CONTENT PANEL (Glassmorphism Slide-in) -->
+    <div id="zone-panel" class="zone-panel">
+      <button id="panel-close" class="panel-close" aria-label="Close panel">×</button>
+      <div id="panel-content" class="panel-content">
+        <!-- Content injected dynamically by UI.js -->
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
   </body>
 </html>
